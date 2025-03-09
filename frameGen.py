@@ -20,7 +20,7 @@ def createFrame(img, zOffset=0):
             pixelInfo.append((position, colour))
 
     blockcode = 'AM^AEAEAEAAA&AAAAAA-' # Code for brightblock with position "^" and colour "&"
-    finalcode = "~B-AAgAf/f2ABAAAAAAA-AAgAgCgMACAAAAAAA-" # level code for just beebo and ic
+    finalcode = "" # level code for just beebo and ic
     for pixel in pixelInfo:
         newBlock = blockcode
         finalcode += newBlock.replace("^", pixel[0]).replace("&", pixel[1])
