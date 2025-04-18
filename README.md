@@ -32,14 +32,14 @@ pip install opencv-python
 === Video to Robot 64 level ===
 
 Enter file location: C:\bad_apple.mp4
-Enter video dimension (width and height) must be an odd number and greater than 3: 7
+Enter video width and height, 2 number seperated by a space must be an odd number and greater than 3: 7 7
 Enter the desired FPS for the video: 2
 Enter the amount of frames you want to be generated: 30
 ```
-*The inputs above result in the first 15 seconds of the video "bad_apple.mp4"*<br>
+*The inputs above result in the first 15 seconds of the video "bad_apple.mp4" displayed 7x7*<br>
 `30 frames / 2 fps = 15 seconds`
 
 * Enter file location - pretty self explanatory
-* Enter video dimension - Vide-a-lecre only makes square videos at this point in time, this is subject to change
+* Enter video dimension - 2 numbers seperated by a space: width height
 * Enter the desired FPS for the video - the higher this number the faster the water current is in the level meaning higher fps
 * Enter the amount of frames you want to be generated - 30 frames will be generated total
