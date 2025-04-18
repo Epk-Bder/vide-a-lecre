@@ -6,9 +6,11 @@ import cv2
  
 import frameGen
 
-def generate(vid, dim=7, fcount=60, dfps=1):
+def generate(vid, dim=[7, 7], fcount=60, dfps=1):
     video = cv2.VideoCapture('bad_apple.mp4')
     fps = int(video.get(cv2.CAP_PROP_FPS))
+    fcount = min(fcount, int(video.get(cv2.CAP_PROP_FRAME_COUNT) // dfps))
+    
     frameIndex = 0
     videoResult = "~E-AAgAf/f2ABAAAAAAA-AAgAgCgMACAAAAAAA-AAgAf8f2AsAAAAAAAABAA-" # beebo spawn point and ic or else game crashes + portal under beebo spawn with id 0
     while video.isOpened():

@@ -26,10 +26,11 @@ if __name__ == "__main__":
             break
         else: print("\nInvalid file location, try again\n")
     while True:
-        vidDim = int(input("Enter video dimension (width and height) must be an odd number and greater than 3: "))
-        if vidDim % 2 == 1 and vidDim > 3:
+        vidDim = map(int, input("Enter video width and height, 2 number seperated by a space must be an odd number and greater than 3: ").split(" "))
+        vidDim = list(vidDim)
+        if vidDim[0] % 2 == 1 and vidDim[0] > 3 and vidDim[1] % 2 == 1 and vidDim[1] > 3:
             break
-        else: print("\nInvalid dimension entered\n")
+        else: print("\nInvalid dimensions entered\n")
     while True:
         desFPS = int(input("Enter the desired FPS for the video: "))
         if desFPS >= 1:

@@ -12,16 +12,16 @@ def createFrame(img, imgDim, zOffset=0, dfps=1):
     pixelInfo = []
     finalcode = "" 
     blockcode = 'AM^AEAEAEAAA&AAAAAA-' # brightblock with position ^ and colour &
-    img = cv2.resize(img, (imgDim, imgDim)) 
+    img = cv2.resize(img, (imgDim[0], imgDim[1])) 
     for i, row in enumerate(img):
         for j, pixel in enumerate(row):
-            x, y, z = 2048 + (j * -4), 2048 + (i * -4), zOffset * 32
+            x, y, z = 2040 + (j * -4), 2048 + (i * -4), zOffset * 32
             while True:
                 if z >= 4096:
                     z -= 4096
-                    x -= 64
+                    x -= imgDim[0] * 8
                 else: break
-            if i == j and i == imgDim//2:
+            if j == imgDim[0]//2 and i == imgDim[1]//2:
                 finalcode += frameTiming.portal(x, y, z, dfps)
             else:
                 position = lecreposition.toLCPos(x, y, z)
